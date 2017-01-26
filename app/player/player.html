@@ -1,0 +1,29 @@
+<div class="container-fluid padding-none">
+    <div class="col-md-6 padding-none">
+        <ul>
+            <li ng-repeat="song in songs_list">
+                <div style="background-color: #0f0f0f; height: 20px" class="col-md-4 black-btn-top"></div>
+                <div class="row track-title">
+                    <a href="{{song.track_url}}">
+                        <span class="col-md-9">{{song.artist_name}}, {{song.track_title}}</span>
+                    </a>
+                    <span class="col-md-3">{{song.track_duration}}</span>
+                </div>
+                <div class="row track-genre">
+                    <p><span ng-repeat="genre in song.track_genres| limitTo: 4">{{ genre.genre_title }}, </span></p>
+                </div>
+                <div style="background-color: #0f0f0f; height: 20px" class="col-md-4 black-btn-bottom"></div>
+                <!--<img src="{{song.track_image_file}}" style="height: 100px">-->
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-6">
+        <div class="col-md-8 col-md-offset-2">
+            <audio src="http://www.vorbis.com/music/Lumme-Badloop.ogg" controls>
+                <!--<source src="../seeb-feat.-neev-breathe_(mp3.cc).mp3" type="audio/mpeg">-->
+            </audio>
+            <input type="range" min="0" max="1" step="0.5" value="1" id="volumeSlider">
+        </div>
+    </div>
+</div>
